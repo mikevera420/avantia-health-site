@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Avantia Health Optimization | Board-Certified Health Coaching',
   description: 'Board-certified health coaching that helps you build habits that last. We exist to fill the gap mainstream healthcare ignores.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
