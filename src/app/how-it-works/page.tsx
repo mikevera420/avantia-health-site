@@ -26,7 +26,7 @@ export default function HowItWorksPage() {
     },
     {
       number: '03',
-      title: 'Weekly Coaching Sessions',
+      title: 'Weekly Coaching',
       subtitle: 'Where the real work happens.',
       items: [
         'One-on-one video calls with your dedicated coach',
@@ -50,22 +50,22 @@ export default function HowItWorksPage() {
   const included = [
     {
       icon: Video,
-      title: 'Weekly 1:1 Coaching Sessions',
+      title: 'Weekly 1:1 Sessions',
       description: 'Live video calls with your dedicated coach',
     },
     {
       icon: MessageSquare,
-      title: 'Unlimited Messaging Support',
+      title: 'Unlimited Messaging',
       description: 'Real-time support between sessions',
     },
     {
       icon: FileText,
       title: 'Personalized Resources',
-      description: 'Strategies and tools built for your situation',
+      description: 'Strategies and tools built for you',
     },
     {
       icon: ShieldCheck,
-      title: '30-Day Money-Back Guarantee',
+      title: '30-Day Guarantee',
       description: 'Your commitment is protected',
     },
   ]
@@ -101,68 +101,51 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50">
-          <div className="floating-orb w-[500px] h-[500px] -top-32 -right-32 opacity-20" />
-          <div className="floating-orb w-[400px] h-[400px] bottom-0 -left-32 opacity-15" style={{ animationDelay: '-7s' }} />
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="animate-fade-in-up text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
-            Your Path to
-            <br />
-            <span className="gradient-text">Lasting Change</span>
+      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+        <div className="section-narrow text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+            Your Path to <span className="gradient-text">Lasting Change</span>
           </h1>
-          <p className="animate-fade-in-up text-xl md:text-2xl text-gray-600" style={{ animationDelay: '0.1s' }}>
+          <p className="text-lg md:text-xl text-slate-600">
             A clear process. Real support. No guesswork.
           </p>
         </div>
       </section>
 
       {/* Steps */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
             {steps.map((step, index) => (
-              <div key={index} className="group relative">
-                {/* Connection line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute left-8 top-24 w-0.5 h-full bg-gradient-to-b from-cyan/30 to-transparent" />
-                )}
-
-                <div className="flex flex-col md:flex-row gap-8">
+              <div key={index} className="card p-6 md:p-8">
+                <div className="flex flex-col sm:flex-row gap-6">
                   {/* Number */}
                   <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan to-green rounded-3xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
-                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan to-green text-white flex items-center justify-center font-bold text-xl shadow-lg">
-                        {step.number}
-                      </div>
+                    <div className="step-number">
+                      {step.number}
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1">
-                    <div className="flex items-baseline gap-3 mb-3">
-                      <h3 className="text-3xl font-bold text-gray-900">{step.title}</h3>
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold text-slate-900">{step.title}</h3>
                       {step.price && (
-                        <span className="px-3 py-1 rounded-full bg-gradient-to-r from-cyan/10 to-green/10 text-cyan font-semibold text-sm">
+                        <span className="badge text-xs">
                           {step.price}
                         </span>
                       )}
                     </div>
-                    <p className="text-xl text-gray-500 mb-6">{step.subtitle}</p>
+                    <p className="text-slate-500 mb-5">{step.subtitle}</p>
 
-                    <div className="bg-gray-50 rounded-2xl p-6">
-                      <ul className="space-y-4">
-                        {step.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start gap-3">
-                            <CheckCircle2 size={20} className="text-green flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-700">{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="space-y-3">
+                      {step.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start gap-3">
+                          <CheckCircle2 size={18} className="text-green flex-shrink-0 mt-0.5" />
+                          <span className="text-slate-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -172,26 +155,21 @@ export default function HowItWorksPage() {
       </section>
 
       {/* What's Included */}
-      <section className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-cyan/5 to-transparent" />
-
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What&apos;s Included</h2>
-            <p className="text-xl text-gray-500">Everything you need for lasting transformation.</p>
+      <section className="py-16 md:py-20 bg-slate-50">
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">What's Included</h2>
+            <p className="text-lg text-slate-500">Everything you need for lasting transformation.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
             {included.map((item, index) => (
-              <div key={index} className="group relative">
-                <div className="absolute -inset-1 bg-gradient-to-r from-cyan to-green rounded-3xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300" />
-                <div className="relative bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100 h-full hover:shadow-lg transition-shadow duration-300">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan/10 to-green/10 mb-6">
-                    <item.icon size={28} className="text-cyan" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">{item.title}</h3>
-                  <p className="text-gray-500">{item.description}</p>
+              <div key={index} className="card p-6 text-center">
+                <div className="icon-box mb-4 mx-auto">
+                  <item.icon size={24} className="text-cyan" />
                 </div>
+                <h3 className="font-semibold text-slate-900 mb-2 text-sm md:text-base">{item.title}</h3>
+                <p className="text-slate-500 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -199,27 +177,22 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-white">
+      <section className="py-16 md:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-500">Everything you need to know.</p>
+            <p className="text-lg text-slate-500">Everything you need to know.</p>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="group">
-                <div className="glass-card rounded-2xl p-8 hover:bg-white/80 transition-colors duration-300">
-                  <h3 className="font-semibold text-gray-900 mb-4 text-lg flex items-start gap-3">
-                    <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan/10 to-green/10 flex items-center justify-center flex-shrink-0 text-cyan font-bold text-sm">
-                      Q
-                    </span>
-                    {faq.question}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed pl-11">{faq.answer}</p>
-                </div>
+              <div key={index} className="card p-6">
+                <h3 className="font-semibold text-slate-900 mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -227,22 +200,19 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute w-[600px] h-[600px] -top-48 -right-48 rounded-full bg-gradient-to-br from-cyan/20 to-green/20 blur-3xl" />
-          <div className="absolute w-[400px] h-[400px] -bottom-32 -left-32 rounded-full bg-gradient-to-br from-green/15 to-cyan/15 blur-3xl" />
-        </div>
+      <section className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-green/10 rounded-full blur-3xl" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+        <div className="relative section-narrow text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Start With One Conversation
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12">
-            A $1 discovery call is all it takes to see if we&apos;re right for you.
+          <p className="text-lg text-slate-300 mb-8">
+            A $1 discovery call is all it takes to see if we're right for you.
           </p>
           <CTAButton variant="dark" size="large" />
-          <p className="text-gray-400 mt-8 text-sm">
+          <p className="text-slate-400 mt-6 text-sm">
             30-day money-back guarantee on all programs
           </p>
         </div>
