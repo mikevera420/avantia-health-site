@@ -1,11 +1,12 @@
-import { Video, MessageSquare, FileText, ShieldCheck } from 'lucide-react'
+import { Video, MessageSquare, FileText, ShieldCheck, CheckCircle2 } from 'lucide-react'
 import CTAButton from '@/components/CTAButton'
 
 export default function HowItWorksPage() {
   const steps = [
     {
       number: '01',
-      title: 'Discovery Call ($1)',
+      title: 'Discovery Call',
+      price: '$1',
       subtitle: 'A low-stakes conversation to see if we\'re a fit.',
       items: [
         'Tell us what you\'re struggling with',
@@ -100,39 +101,69 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Your Path to Lasting Change
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-50">
+          <div className="floating-orb w-[500px] h-[500px] -top-32 -right-32 opacity-20" />
+          <div className="floating-orb w-[400px] h-[400px] bottom-0 -left-32 opacity-15" style={{ animationDelay: '-7s' }} />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="animate-fade-in-up text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+            Your Path to
+            <br />
+            <span className="gradient-text">Lasting Change</span>
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="animate-fade-in-up text-xl md:text-2xl text-gray-600" style={{ animationDelay: '0.1s' }}>
             A clear process. Real support. No guesswork.
           </p>
         </div>
       </section>
 
       {/* Steps */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-16">
             {steps.map((step, index) => (
-              <div key={index} className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center font-bold text-xl">
-                    {step.number}
+              <div key={index} className="group relative">
+                {/* Connection line */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute left-8 top-24 w-0.5 h-full bg-gradient-to-b from-cyan/30 to-transparent" />
+                )}
+
+                <div className="flex flex-col md:flex-row gap-8">
+                  {/* Number */}
+                  <div className="flex-shrink-0">
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan to-green rounded-3xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300" />
+                      <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan to-green text-white flex items-center justify-center font-bold text-xl shadow-lg">
+                        {step.number}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 mb-4">{step.subtitle}</p>
-                  <ul className="space-y-2">
-                    {step.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0" />
-                        <span className="text-gray-600">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-3 mb-3">
+                      <h3 className="text-3xl font-bold text-gray-900">{step.title}</h3>
+                      {step.price && (
+                        <span className="px-3 py-1 rounded-full bg-gradient-to-r from-cyan/10 to-green/10 text-cyan font-semibold text-sm">
+                          {step.price}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-xl text-gray-500 mb-6">{step.subtitle}</p>
+
+                    <div className="bg-gray-50 rounded-2xl p-6">
+                      <ul className="space-y-4">
+                        {step.items.map((item, itemIndex) => (
+                          <li key={itemIndex} className="flex items-start gap-3">
+                            <CheckCircle2 size={20} className="text-green flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -141,17 +172,26 @@ export default function HowItWorksPage() {
       </section>
 
       {/* What's Included */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">What&apos;s Included</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-24 md:py-32 bg-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-cyan/5 to-transparent" />
+
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What&apos;s Included</h2>
+            <p className="text-xl text-gray-500">Everything you need for lasting transformation.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {included.map((item, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary mb-4">
-                  <item.icon size={24} />
+              <div key={index} className="group relative">
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan to-green rounded-3xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-300" />
+                <div className="relative bg-white rounded-2xl p-8 text-center shadow-sm border border-gray-100 h-full hover:shadow-lg transition-shadow duration-300">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan/10 to-green/10 mb-6">
+                    <item.icon size={28} className="text-cyan" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">{item.title}</h3>
+                  <p className="text-gray-500">{item.description}</p>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -159,16 +199,27 @@ export default function HowItWorksPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-500">Everything you need to know.</p>
+          </div>
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="group">
+                <div className="glass-card rounded-2xl p-8 hover:bg-white/80 transition-colors duration-300">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-lg flex items-start gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan/10 to-green/10 flex items-center justify-center flex-shrink-0 text-cyan font-bold text-sm">
+                      Q
+                    </span>
+                    {faq.question}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed pl-11">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -176,14 +227,22 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 md:py-24 bg-gray-900 text-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Start With One Conversation</h2>
-          <p className="text-xl text-gray-300 mb-8">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800" />
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute w-[600px] h-[600px] -top-48 -right-48 rounded-full bg-gradient-to-br from-cyan/20 to-green/20 blur-3xl" />
+          <div className="absolute w-[400px] h-[400px] -bottom-32 -left-32 rounded-full bg-gradient-to-br from-green/15 to-cyan/15 blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8">
+            Start With One Conversation
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-300 mb-12">
             A $1 discovery call is all it takes to see if we&apos;re right for you.
           </p>
-          <CTAButton />
-          <p className="text-gray-400 mt-6 text-sm">
+          <CTAButton variant="dark" size="large" />
+          <p className="text-gray-400 mt-8 text-sm">
             30-day money-back guarantee on all programs
           </p>
         </div>
