@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-gradient-mesh">
         <div className="section-narrow text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
             Get In <span className="gradient-text">Touch</span>
@@ -100,8 +100,8 @@ export default function ContactPage() {
           </div>
 
           {/* Direct Email */}
-          <div className="mt-12 text-center">
-            <p className="text-slate-500 mb-2 text-sm">Email us directly:</p>
+          <div className="mt-12 bg-slate-50 rounded-xl p-8 border border-slate-100 text-center">
+            <p className="text-slate-600 mb-2 text-sm">Email us directly:</p>
             <a
               href="mailto:contact@avantiahealthoptimization.com"
               className="text-xl font-semibold text-cyan hover:text-cyan-600 transition-colors"

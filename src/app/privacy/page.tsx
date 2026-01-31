@@ -4,7 +4,7 @@ export default function PrivacyPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-gradient-mesh">
         <div className="section-narrow text-center">
           <div className="icon-box-lg mb-6 mx-auto">
             <Shield size={28} className="text-white" />
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <div>
+            <div className="card p-8">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">Information We Collect</h2>
               <p className="text-slate-600 mb-4">We may collect information about you in various ways, including:</p>
               <ul className="space-y-3 text-slate-600">
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
               </ul>
             </div>
 
-            <div>
+            <div className="card p-8">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">How We Use Your Information</h2>
               <p className="text-slate-600 mb-4">We use the information we collect to:</p>
               <ul className="space-y-2 text-slate-600">
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
               </ul>
             </div>
 
-            <div>
+            <div className="card p-8">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">Information Sharing</h2>
               <p className="text-slate-600 leading-relaxed">
                 We do not sell, trade, or rent your personal information to third parties.
@@ -92,7 +92,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <div>
+            <div className="card p-8">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">Data Security</h2>
               <p className="text-slate-600 leading-relaxed">
                 We implement appropriate security measures to protect your personal information.
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
               </p>
             </div>
 
-            <div>
+            <div className="card p-8">
               <h2 className="text-xl font-semibold text-slate-900 mb-4">Your Rights</h2>
               <p className="text-slate-600 mb-4">You have the right to:</p>
               <ul className="space-y-2 text-slate-600">

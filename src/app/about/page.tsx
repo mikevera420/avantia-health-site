@@ -37,7 +37,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-gradient-mesh">
         <div className="section-narrow text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
             The New Gold Standard in <span className="gradient-text">Health Coaching</span>
@@ -103,7 +103,7 @@ export default function AboutPage() {
           {/* 6 Pillars */}
           <div className="bg-white rounded-2xl p-8 max-w-4xl mx-auto border border-slate-100 shadow-soft">
             <p className="text-center text-slate-500 font-medium mb-6 text-sm">Our 6 Pillars Framework</p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
               {pillars.map((pillar, index) => (
                 <div key={index} className="text-center">
                   <div className="icon-box mb-3 mx-auto">
@@ -164,8 +164,8 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-green/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-72 sm:h-72 bg-green/10 rounded-full blur-3xl" />
 
         <div className="relative section-narrow text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

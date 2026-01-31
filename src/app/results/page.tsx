@@ -16,7 +16,7 @@ export default function ResultsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-gradient-mesh">
         <div className="section-narrow text-center">
           <span className="badge mb-6">Client Stories</span>
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
@@ -32,9 +32,11 @@ export default function ResultsPage() {
       <section className="py-12 md:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <YouTubeEmbed videoId={testimonialVideos[0].id} title={testimonialVideos[0].title} />
-          <p className="text-center text-slate-500 mt-4">
-            Hear from our clients about their transformation journey
-          </p>
+          <div className="bg-slate-50 rounded-xl p-4 mt-4 border border-slate-100">
+            <p className="text-center text-slate-600 text-sm">
+              Hear from our clients about their transformation journey
+            </p>
+          </div>
         </div>
       </section>
 
@@ -88,8 +90,8 @@ export default function ResultsPage() {
 
       {/* CTA */}
       <section className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-green/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-72 sm:h-72 bg-green/10 rounded-full blur-3xl" />
 
         <div className="relative section-narrow text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

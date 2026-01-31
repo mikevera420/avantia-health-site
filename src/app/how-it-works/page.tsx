@@ -101,7 +101,7 @@ export default function HowItWorksPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-16 pb-12 md:pt-24 md:pb-16 bg-gradient-mesh">
+      <section className="pt-16 pb-16 md:pt-24 md:pb-20 bg-gradient-mesh">
         <div className="section-narrow text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">
             Your Path to <span className="gradient-text">Lasting Change</span>
@@ -162,7 +162,7 @@ export default function HowItWorksPage() {
             <p className="text-lg text-slate-500">Everything you need for lasting transformation.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
             {included.map((item, index) => (
               <div key={index} className="card p-6 text-center">
                 <div className="icon-box mb-4 mx-auto">
@@ -201,8 +201,8 @@ export default function HowItWorksPage() {
 
       {/* CTA */}
       <section className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-green/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-72 sm:h-72 bg-green/10 rounded-full blur-3xl" />
 
         <div className="relative section-narrow text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

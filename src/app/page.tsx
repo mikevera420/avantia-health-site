@@ -235,8 +235,8 @@ export default function Home() {
       {/* Final CTA */}
       <section className="relative py-16 md:py-20 bg-slate-900 overflow-hidden">
         {/* Subtle gradient accent */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-green/10 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-36 h-36 sm:w-72 sm:h-72 bg-green/10 rounded-full blur-3xl" />
 
         <div className="relative section-narrow text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
